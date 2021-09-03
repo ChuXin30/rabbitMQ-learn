@@ -1,1 +1,2 @@
 学习rabbitMQ
+尚硅谷2021最新版RabbitMQ教程丨快速掌握MQ消息中间件
