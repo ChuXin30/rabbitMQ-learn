@@ -17,9 +17,30 @@ public class TtlQueueConfig {
     public static final String X_EXCHANGE = "X";
     public static final String QUEUE_A = "QA";
     public static final String QUEUE_B = "QB";
+
+
     public static final String Y_DEAD_LETTER_EXCHANGE = "Y";
     public static final String DEAD_LETTER_QUEUE = "QD";
     // 声明 xExchange
+
+    public static final String QUEUE_C = "QC";
+
+    @Bean("queueC")
+    public Queue queueC(){
+        Map<String, Object> args = new HashMap<>(3);
+        //声明当前队列绑定的死信交换机
+        args.put("x-dead-letter-exchange", Y_DEAD_LETTER_EXCHANGE);
+        //声明当前队列的死信路由 key
+        args.put("x-dead-letter-routing-key", "YD");
+        //没有声明 TTL 属性
+        return QueueBuilder.durable(QUEUE_C).withArguments(args).build();
+    }
+    //声明队列 B 绑定 X 交换机
+    @Bean
+    public Binding queuecBindingX(@Qualifier("queueC") Queue queueC,
+                                  @Qualifier("xExchange") DirectExchange xExchange){
+        return BindingBuilder.bind(queueC).to(xExchange).with("XC");
+    }
 
     @Bean("xExchange")
     public DirectExchange xExchange(){
