@@ -4,7 +4,6 @@ package com.rabbitmq.hello.five;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.hello.util.MqUtils;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 

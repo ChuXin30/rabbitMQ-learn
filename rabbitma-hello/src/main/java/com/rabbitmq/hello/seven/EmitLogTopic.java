@@ -2,7 +2,7 @@ package com.rabbitmq.hello.seven;
 
 
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.hello.util.MqUtils;
+import com.rabbitmq.hello.util.*;
 
 import java.util.HashMap;
 import java.util.Map;

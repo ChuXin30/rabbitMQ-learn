@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../rabbitMQ-2/pom.xml" />
+        <option value="$PROJECT_DIR$/../springboot_mq/pom.xml" />
       </list>
     </option>
   </component>
