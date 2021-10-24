@@ -20,6 +20,7 @@ public class ConfirmConfig {
     return QueueBuilder.durable(CONFIRM_QUEUE_NAME).build();
 }
     // 声明确认队列绑定关系
+
     @Bean
     public Binding queueBinding(@Qualifier("confirmQueue") Queue queue,
                                 @Qualifier("confirmExchange") DirectExchange exchange){
